@@ -18,9 +18,9 @@ class ConcentrationModel {
                 if cards[index].isFaceUp {
                     if foundIndex == nil {
                         foundIndex = index
+                    } else {
+                        return nil
                     }
-                } else {
-                    return nil
                 }
             }
             return foundIndex
@@ -29,7 +29,6 @@ class ConcentrationModel {
             for index in cards.indices {
                 cards[index].isFaceUp = ( index == newValue)
             }
-            
         }
     }
     
@@ -42,13 +41,7 @@ class ConcentrationModel {
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
             } else {
-                // either no cards or 2 cards are face up
-                for flipDownIndex in cards.indices {
-                    cards[flipDownIndex].isFaceUp = false
-                }
-                cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
