@@ -9,7 +9,7 @@
 import Foundation
 
 class ConcentrationModel {
-    var cards = [Card]()
+    private (set) var cards = [Card]()
     
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get {

@@ -41,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E898489258B9F0B00D0DB18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1EC24FDF252D672200840761 /* Card.swift */,
+				1EC24FDD252D65A400840761 /* ConcentrationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1E89848A258B9F1400D0DB18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1EE57D10251EC62B0037E759 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1EE57D00251EC62B0037E759 = {
 			isa = PBXGroup;
 			children = (
@@ -61,12 +78,11 @@
 			isa = PBXGroup;
 			children = (
 				1EE57D20251EC7F60037E759 /* Supporting FIles */,
-				1EE57D10251EC62B0037E759 /* ViewController.swift */,
+				1E898489258B9F0B00D0DB18 /* Model */,
+				1E89848A258B9F1400D0DB18 /* Controller */,
 				1EE57D12251EC62B0037E759 /* Main.storyboard */,
 				1EE57D17251EC62D0037E759 /* LaunchScreen.storyboard */,
 				1EE57D1A251EC62D0037E759 /* Info.plist */,
-				1EC24FDD252D65A400840761 /* ConcentrationModel.swift */,
-				1EC24FDF252D672200840761 /* Card.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
