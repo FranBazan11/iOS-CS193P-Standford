@@ -9,7 +9,7 @@
 import Foundation
 
 class ConcentrationModel {
-    var cards = [Card]()
+    private (set) var cards = [Card]()
     
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
@@ -18,9 +18,9 @@ class ConcentrationModel {
                 if cards[index].isFaceUp {
                     if foundIndex == nil {
                         foundIndex = index
+                    } else {
+                        return nil
                     }
-                } else {
-                    return nil
                 }
             }
             return foundIndex
@@ -29,11 +29,11 @@ class ConcentrationModel {
             for index in cards.indices {
                 cards[index].isFaceUp = ( index == newValue)
             }
-            
         }
     }
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "ConcentrationModel.chooseCard(at: \(index)): choose index not in the cards")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 // check inf cards match
@@ -42,20 +42,15 @@ class ConcentrationModel {
                     cards[index].isMatched = true
                 }
                 cards[index].isFaceUp = true
-                indexOfOneAndOnlyFaceUpCard = nil
             } else {
-                // either no cards or 2 cards are face up
-                for flipDownIndex in cards.indices {
-                    cards[flipDownIndex].isFaceUp = false
-                }
-                cards[index].isFaceUp = true
                 indexOfOneAndOnlyFaceUpCard = index
             }
         }
     }
     
     init(numberOfPairsOfCards: Int) {
-        for _ in 1 ... numberOfPairsOfCards {
+        assert(numberOfPairsOfCards > 0, "ConcentrationModel.chooseCard(at: \(numberOfPairsOfCards)): you must have at least one pair of cards")
+        for _ in 0 ..< numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
         }
