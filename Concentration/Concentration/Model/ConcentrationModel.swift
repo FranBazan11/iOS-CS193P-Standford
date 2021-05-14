@@ -33,6 +33,7 @@ class ConcentrationModel {
     }
     
     func chooseCard(at index: Int) {
+        assert(cards.indices.contains(index), "ConcentrationModel.chooseCard(at: \(index)): choose index not in the cards")
         if !cards[index].isMatched {
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
                 // check inf cards match
@@ -48,7 +49,8 @@ class ConcentrationModel {
     }
     
     init(numberOfPairsOfCards: Int) {
-        for _ in 1 ... numberOfPairsOfCards {
+        assert(numberOfPairsOfCards > 0, "ConcentrationModel.chooseCard(at: \(numberOfPairsOfCards)): you must have at least one pair of cards")
+        for _ in 0 ..< numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
         }
