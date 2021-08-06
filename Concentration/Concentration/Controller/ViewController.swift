@@ -10,24 +10,49 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - Private properties
+    
     private lazy var game = ConcentrationModel(numberOfPairsOfCards: numberOfPairsOfCards)
     
-    var numberOfPairsOfCards: Int {
-        get {
-            return (cardButtons.count + 1) / 2
+    private var emojiChoices = "😈💩👽💀👹🎃🤖👾👻"
+    
+    private var emoji = [Card: String]()
+    
+    private func emoji(for card: Card) -> String {
+        if emoji[card] == nil, emojiChoices.count > 0 {
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: emojiChoices.count.arc4random)
+            emoji[card] = String(emojiChoices.remove(at: randomStringIndex))
         }
+        return emoji[card] ?? "?"
+    }
+    
+    private var numberOfPairsOfCards: Int {
+            return (cardButtons.count) / 2
     }
     
     private(set) var flipCount = 0 {
         didSet {
-            flipCountLabel.text = "Flips: \(flipCount)"
+            updateFlipCountLabel()
         }
     }
     
-    @IBOutlet private weak  var flipCountLabel: UILabel!
+    private func updateFlipCountLabel() {
+        let attributes : [NSAttributedString.Key : Any] = [
+            .strokeWidth : 5,
+            .strokeColor : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1),
+        ]
+        
+        let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attributes)
+    
+        flipCountLabel.attributedText = attributedString
+    }
+    
+    @IBOutlet private weak  var flipCountLabel: UILabel! {
+        didSet {
+            updateFlipCountLabel()
+        }
+    }
     @IBOutlet private var cardButtons: [UIButton]!
-    
-    
     
     @IBAction private func touchCard(_ sender: UIButton) {
         flipCount += 1
@@ -47,22 +72,14 @@ class ViewController: UIViewController {
                 button.setTitle(emoji(for: card), for: .normal)
                 button.backgroundColor = UIColor.white
             } else {
-                button.setTitle("", for: .normal)
+                button.setTitle("", for: UIControl.State.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0) : #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             }
         }
     }
     
-    private var emojiChoices = ["😈","💩","👽","💀","👹","🎃","🤖","👾","👻"]
+//    private var emojiChoices = ["😈","💩","👽","💀","👹","🎃","🤖","👾","👻"]
     
-    private var emojiDict = [Int: String]()
-    
-    private func emoji(for card: Card) -> String {
-        if emojiDict[card.id] == nil, emojiChoices.count > 0 {
-            emojiDict[card.id] = emojiChoices.remove(at: emojiChoices.count.arc4random)
-        }
-        return emojiDict[card.id] ?? "?"
-    }
 }
 
 extension Int {
