@@ -25,8 +25,8 @@ Miniprojects that were created alongside this course:
 | 2.    | [Model View Controller (MVC)](Slides/Lecture-2-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=4iGdu4IWMFc&index=2&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ✔️ |
 | FL1 | Debugging: Xcode Tips & Tricks | [![](Media/play.png)](https://www.youtube.com/watch?v=7CeXdDGjsVU&index=19&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ✔️ |
 | 3.    | [Swift](Slides/Lecture-3-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=88husjydCWY&index=3&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ✔️ |
-| 4.    | [Protocols & Closures](Slides/Lecture-4-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=RGMKmhy-eWE&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=4) | 🕒 |
-| 5.    | [Drawing in iOS](Slides/Lecture-5-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=pOO0pz0gPLk&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=5) | ❌ |
+| 4.    | [Protocols & Closures](Slides/Lecture-4-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=RGMKmhy-eWE&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=4) | ✔️ |
+| 5.    | [Drawing in iOS](Slides/Lecture-5-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=pOO0pz0gPLk&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=5) | 🕒 |
 | 6.    | [Multitouch & Multiple MVCs](Slides/Lecture-6-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=N_PyNplrhys&index=6&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
 | 7.    | [Multiple MVCs, Timer, Animation](Slides/Lecture-7-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=diihWsxOsDk&index=7&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
 | 8.    | [Animation](Slides/Lecture-8-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=5w9lu9ABJzE&index=8&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
