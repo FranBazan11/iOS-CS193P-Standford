@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     
     
@@ -116,11 +117,20 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedReact.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
-        } else {
-            drawPips()
+        if isFaceUP {
+            if let faceCardImage = UIImage(named: rankString+suit,
+                                           in: Bundle(for: self.classForCoder),
+                                           compatibleWith: traitCollection) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            } else {
+                drawPips()
+            }
         }
+//        else {
+//            if let cardBackImage = UIImage(named: "cardback") {
+//                cardBackImage.draw(in: bounds)
+//            }
+//        }
     }
 }
 
