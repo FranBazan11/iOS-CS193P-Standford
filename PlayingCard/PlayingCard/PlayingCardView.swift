@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     
     
@@ -92,15 +93,18 @@ class PlayingCardView: UIView {
         }
     }
     
-    //When bounds changes
+    /// When bounds changes
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        /// Set and position of `upperLeftCornerLabel`
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = bounds.origin.offSetBy(dx: cornerOffset, dy: cornerOffset)
         
-        configureCornerLabel(lowerRightCornerLabel )
+        /// Set and position of `lowerRightCornerLabel`
+        configureCornerLabel(lowerRightCornerLabel)
         
+        /// Rotate and translate the UILabel
         lowerRightCornerLabel.transform = CGAffineTransform.identity
             .translatedBy(x: lowerRightCornerLabel.frame.size.width, y: lowerRightCornerLabel.frame.size.height)
             .rotated(by: CGFloat.pi)
@@ -116,11 +120,20 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedReact.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
-        } else {
-            drawPips()
+        if isFaceUP {
+            if let faceCardImage = UIImage(named: rankString+suit,
+                                           in: Bundle(for: self.classForCoder),
+                                           compatibleWith: traitCollection) {
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            } else {
+                drawPips()
+            }
         }
+//        else {
+//            if let cardBackImage = UIImage(named: "cardback") {
+//                cardBackImage.draw(in: bounds)
+//            }
+//        }
     }
 }
 
@@ -128,8 +141,7 @@ class PlayingCardView: UIView {
 
 extension PlayingCardView {
     
-    // MARK: Constants
-    
+    /// Constants
     private struct SizeRatio {
         static let cornerFontSizeToBoundsHeight: CGFloat = 0.085
         static let cornerRadiusToBoundsHeight: CGFloat = 0.06
@@ -159,10 +171,9 @@ extension PlayingCardView {
         default: return "?"
         }
     }
-            
 }
 
-// MARK: - Extension PlayingCard
+// MARK: - Extension CGRect
 
 extension CGRect {
     var leftHalf: CGRect {
