@@ -31,7 +31,7 @@ Miniprojects that were created alongside this course:
 | 7.    | [Multiple MVCs, Timer, Animation](Slides/Lecture-7-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=diihWsxOsDk&index=7&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
 | 8.    | [Animation](Slides/Lecture-8-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=5w9lu9ABJzE&index=8&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
 | FL2 | Github, Source Code Workflow | [![](Media/play.png)](https://www.youtube.com/watch?v=P8gyK-_auNk&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=18) | ❌ ||
-| 9.    | [View Controller Lifecycle, Scroll View](Slides/Lecture-9-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=QjrMau1WmmU&index=9&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ❌ |
+| 9.    | [View Controller Lifecycle, Scroll View](Slides/Lecture-9-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=QjrMau1WmmU&index=9&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN) | ✔️ |
 | 10.  | [Multithreading & AutoLayout](Slides/Lecture-10-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=U1G8f6F3PyQ&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=10) | ❌ |
 | FL3 | Instruments | [![](Media/play.png)](https://www.youtube.com/watch?v=BCNlw9rhEe0&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=20) | ❌ |
 | 11.  | [Drag and Drop, UITableView, & UICollectionView](Slides/Lecture-11-Slides.pdf) | [![](Media/play.png)](https://www.youtube.com/watch?v=hore835-Mj4&list=PL_l7vS8VbNDFBiKIL3fEQhkKXTYsncsvN&index=11) | ❌ |
